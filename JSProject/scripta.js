@@ -1,5 +1,5 @@
 function createCard(serial, titleName, channelName, views, monthsOld, timeStamp, thumbnailLink) {
-    let card = document.createElement("div")
+    let card = document.createElement("div") //was using query selector and insertadjacentelement to directly add element to container but it resulted in chaos
     card.className = "card"
 
     let serialNo = document.createElement("div")
@@ -27,7 +27,7 @@ function createCard(serial, titleName, channelName, views, monthsOld, timeStamp,
     titleEl.className = "titleinfo"
     titleEl.innerText = `${titleName} | Ashish Chanchlani | ACV Studios`
 
-    const formatter = new Intl.NumberFormat('en', {
+    const formatter = new Intl.NumberFormat('en', {  // used a built-in function after searching and studying its properties
         notation: 'compact',
         compactDisplay: 'short'
     })
@@ -40,7 +40,7 @@ function createCard(serial, titleName, channelName, views, monthsOld, timeStamp,
     desc.append(titleEl)
     desc.append(channelEl)
 
-    card.append(serialNo)
+    card.append(serialNo)  // used append instead of insertadjacentelement or appendchild 
     card.append(thumbnail)
     card.append(desc)
 
